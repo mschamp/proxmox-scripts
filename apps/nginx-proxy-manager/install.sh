@@ -217,8 +217,10 @@ step_start "Nginx Proxy Manager" "Downloading" "Downloaded"
 
 step_start "Enviroment" "Setting up" "Setup"
   # Update NPM version in package.json files
-  sed -i "s+0.0.0+$NPM_VERSION+g" backend/package.json
-  sed -i "s+0.0.0+$NPM_VERSION+g" frontend/package.json
+  # sed -i "s+0.0.0+$NPM_VERSION+g" backend/package.json
+  # sed -i "s+0.0.0+$NPM_VERSION+g" frontend/package.json
+  sed -i "s/\"version\": \"0.0.0\"/\"version\": \"$NPM_VERSION\"/" backend/package.json
+  sed -i "s/\"version\": \"0.0.0\"/\"version\": \"$NPM_VERSION\"/" frontend/package.json
 
   # Fix nginx config files for use with openresty defaults
   sed -i 's/user npm/user root/g; s/^pid/#pid/g; s+^daemon+#daemon+g' docker/rootfs/etc/nginx/nginx.conf
