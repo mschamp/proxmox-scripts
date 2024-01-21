@@ -32,7 +32,7 @@ bash -c "$(wget --no-cache -qO- https://raw.githubusercontent.com/ej52/proxmox/m
 you can set these parameters by appending ` -- <parameter> <value>` like:
 
 ```bash
-bash -c "$(wget --no-cache -qO- https://raw.githubusercontent.com/ej52/proxmox/main/create.sh)" -s --app nginx-proxy-manager --cleanup
+bash -c "$(wget --no-cache -qO- https://raw.githubusercontent.com/mschamp/proxmox/main/create.sh)" -s --app nginx-proxy-manager --cleanup
 ```
 
 ### Console
